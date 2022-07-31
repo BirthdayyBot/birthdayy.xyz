@@ -1,4 +1,5 @@
 import NavbarItem from "./NavbarItem";
+import NavbarDropdown from "./NavbarDropdown";
 import Link from "next/link";
 import { useState } from "react";
 import style from "../../styles/Navbar.module.scss";
@@ -48,73 +49,25 @@ const Navbar = () => {
         >
           <div className="navbar-start">
             <NavbarItem label="Home" url="/" />
-            <Link href="/styleguide">
-              <a className="navbar-item">Style Guide</a>
-            </Link>
+            <NavbarItem label="NavItem" url="#" />
 
-            <div className="navbar-item has-dropdown is-hoverable">
-              <Link href="/animations">
-                <a className="navbar-link">Animations</a>
-              </Link>
-              <div className="navbar-dropdown">
-                <Link href="/media/image">
-                  <a className="navbar-item">CSS</a>
-                </Link>
-                <Link href="/media/video">
-                  <a className="navbar-item">GIF</a>
-                </Link>
-                <Link href="/media/sound">
-                  <a className="navbar-item">SVG</a>
-                </Link>
-              </div>
-            </div>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <Link href="">
-                <a className="navbar-link">Media</a>
-              </Link>
-              <div className="navbar-dropdown">
-                <Link href="/media/image">
-                  <a className="navbar-item">Image</a>
-                </Link>
-                <Link href="/media/video">
-                  <a className="navbar-item">Video</a>
-                </Link>
-                <Link href="/media/sound">
-                  <a className="navbar-item">Audio</a>
-                </Link>
-              </div>
-            </div>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <Link href="/copyright">
-                <a className="navbar-link">Copyright</a>
-              </Link>
-
-              <div className="navbar-dropdown">
-                <Link href="/copyright/faq">
-                  <a className="navbar-item">FAQ</a>
-                </Link>
-                <Link href="/copyright/licenses">
-                  <a className="navbar-item">Licences</a>
-                </Link>
-              </div>
-            </div>
-            <Link href="/tryouts">
-              <a className="navbar-item">Tryouts</a>
-            </Link>
+            <NavbarDropdown label="Dropdown">
+              <NavbarItem label="Dropdown" url="#" />
+              <NavbarItem label="Dropdown" url="#" />
+              <NavbarItem label="Dropdown" url="#" />
+            </NavbarDropdown>
           </div>
 
-          {/* <div className="navbar-end">
-            <div className="navbar-item">
+          <div className="navbar-end">
+            <div className="navbar-item mr-3">
               <div className="buttons">
                 <a className="button is-primary">
                   <strong>Sign up</strong>
                 </a>
-                <a className="button is-light">Log in</a>
+                <a className="button">Log in</a>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </nav>
     </div>
