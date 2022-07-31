@@ -11,7 +11,7 @@ const Navbar = () => {
     // if is active, set to false if not, set to true
     setisActive(!isActive);
   }
-
+  //TODO: Fix dropdown beeing open automatically when burger is clicked
   return (
     <div className={style.navbar_component}>
       <nav
