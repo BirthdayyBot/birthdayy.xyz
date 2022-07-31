@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "../styles/globals.scss";
+import Layout from "../components/_layout";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function BirthdayyXYZ({ Component, pageProps }) {
+  return (
+    <div className="app">
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </div>
+  );
 }
 
-export default MyApp
+export default BirthdayyXYZ;
