@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <div className={style.navbar_component}>
       <nav
-        className="navbar has-shadow is-primary mb-2"
+        className="navbar is-primary is-spaced"
         role="navigation"
         aria-label="main navigation"
       >
@@ -26,7 +26,7 @@ const Navbar = () => {
               width="112"
               height="28"
             /> */}
-            <h1 className="navbar-logo is-size-4 is-logo">Nikolai</h1>
+            <h1 className="navbar-logo is-size-4 is-logo">BIRTHDAYY</h1>
           </a>
 
           <a

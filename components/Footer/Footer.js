@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className={style.footer_component}>
       <div className="content has-text-centered">
-        <p>Nikolai Schunk - 2022</p>
+        <p>Birthdayy - 2022</p>
         <Link href="/disclosure">Legal Disclosure</Link>
       </div>
     </div>
