@@ -1,6 +1,6 @@
 import Image from "next/image";
 import style from "../../styles/Index.module.scss";
-const Title = () => {
+const TitleComponent = () => {
   return (
     <div className={style.title_component}>
       <div className="columns is-centered is-mobile">
@@ -27,7 +27,8 @@ const Title = () => {
           <div className="columns">
             <div className="column">
               <h4 className="is-size-4 is-sub-header">
-                Your stunning and easy-to-use Birthday Helper on Discord
+                Your good look and easy-to-use Birthday Helper for your Discord
+                Server
               </h4>
             </div>
           </div>
@@ -37,4 +38,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default TitleComponent;
