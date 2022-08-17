@@ -14,6 +14,16 @@ html {
 
 .is-logo {
   font-family: $header-font;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.is-strong {
+  font-weight: bold;
+}
+
+.navbar-item {
+  font-size: 1.2rem;
 }
 
 // classname with number as props (e.g. .is-heading-1)

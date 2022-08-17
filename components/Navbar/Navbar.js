@@ -15,19 +15,21 @@ const Navbar = () => {
   return (
     <div className={style.navbar_component}>
       <nav
-        className="navbar is-primary is-spaced"
+        className="navbar is-primary is-spaced is-transparent"
         role="navigation"
         aria-label="main navigation"
       >
         <div className="navbar-brand">
-          <a className="navbar-item" href="#">
-            {/* <img
+          <Link href="/">
+            <a className="navbar-item">
+              {/* <img
               src="https://bulma.io/images/bulma-logo.png"
               width="112"
               height="28"
             /> */}
-            <h1 className="navbar-logo is-size-4 is-logo">BIRTHDAYY</h1>
-          </a>
+              <h1 className="navbar-logo is-logo">BIRTHDAYY</h1>
+            </a>
+          </Link>
 
           <a
             role="button"
@@ -48,23 +50,50 @@ const Navbar = () => {
           className={`navbar-menu ${isActive ? "is-active" : ""}`}
         >
           <div className="navbar-start">
-            <NavbarItem label="Home" url="/" />
-            <NavbarItem label="NavItem" url="#" />
+            <NavbarItem label="Docs" url="https://docs.birthdayy.xyz/" />
+            <NavbarItem label="Vote" url="/vote" />
+            <NavbarItem label="Premium" url="/premium" />
 
-            <NavbarDropdown label="Dropdown">
-              <NavbarItem label="Dropdown" url="#" />
-              <NavbarItem label="Dropdown" url="#" />
-              <NavbarItem label="Dropdown" url="#" />
+            <NavbarDropdown label="Commands">
+              <NavbarItem
+                label="General"
+                url="https://docs.birthdayy.xyz/commands/general"
+              />
+              <NavbarItem
+                label="Birthday"
+                url="https://docs.birthdayy.xyz/commands/birthday"
+              />
+              <NavbarItem
+                label="Config"
+                url="https://docs.birthdayy.xyz/commands/config"
+              />
             </NavbarDropdown>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item mr-3">
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button">Log in</a>
+              <div className="buttons are-medium">
+                <Link href="/discord">
+                  <a
+                    className={`button is-primary is-rounded  ${
+                      isActive ? "is-fullwidth is-outlined" : ""
+                    }`}
+                  >
+                    <strong>Support Discord</strong>
+                  </a>
+                </Link>
+
+                <Link href="/invite">
+                  <a
+                    className={`button is-rounded is-strong ${
+                      isActive
+                        ? "is-primary is-fullwidth"
+                        : "is-white is-outlined"
+                    }`}
+                  >
+                    Invite
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
