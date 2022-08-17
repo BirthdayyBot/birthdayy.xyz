@@ -8,7 +8,7 @@ $cyan: #046589;
 $blue: #7892c2;
 
 //derived variables
-$light: #fefefe;
+$light: #b8ded6;
 $dark: #262828;
 
 $primary: $turquoise;
@@ -20,14 +20,14 @@ $secondary: #f3969a;
 // $primary-dark: darken($secondary, 30%);
 
 $highlight: #e9495c;
+$highlight: #2c2f36;
 
-.is-color-secondary {
-  color: $secondary;
+.is-color-primary {
+  color: #78c2ad;
 }
 .has-text-secondary {
   color: $secondary;
 }
-
 
 /*
 

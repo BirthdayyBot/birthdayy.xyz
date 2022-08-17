@@ -3,6 +3,9 @@
 @import "./fonts";
 @import "./colors";
 
+html {
+  background-color: $light;
+}
 
 .is-secondary {
   color: $secondary;
