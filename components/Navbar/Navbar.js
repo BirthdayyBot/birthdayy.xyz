@@ -50,22 +50,25 @@ const Navbar = () => {
           className={`navbar-menu ${isActive ? "is-active" : ""}`}
         >
           <div className="navbar-start">
-            <NavbarItem label="Docs" url="https://docs.birthdayy.xyz/" />
-            <NavbarItem label="Vote" url="/vote" />
-            <NavbarItem label="Premium" url="/premium" />
+            <NavbarItem label="Docs" url="https://docs.birthdayy.xyz/" newTab />
+            <NavbarItem label="Vote" url="/vote" newTab />
+            <NavbarItem label="Premium" url="/premium" newTab />
 
             <NavbarDropdown label="Commands">
               <NavbarItem
                 label="General"
                 url="https://docs.birthdayy.xyz/commands/general"
+                newTab
               />
               <NavbarItem
                 label="Birthday"
                 url="https://docs.birthdayy.xyz/commands/birthday"
+                newTab
               />
               <NavbarItem
                 label="Config"
                 url="https://docs.birthdayy.xyz/commands/config"
+                newTab
               />
             </NavbarDropdown>
           </div>
@@ -75,11 +78,12 @@ const Navbar = () => {
               <div className="buttons are-medium">
                 <Link href="/discord">
                   <a
-                    className={`button is-primary is-rounded  ${
+                    className={`button is-primary is-rounded is-strong ${
                       isActive ? "is-fullwidth is-outlined" : ""
                     }`}
+                    target="_blank"
                   >
-                    <strong>Support Discord</strong>
+                    Support Discord
                   </a>
                 </Link>
 
@@ -90,6 +94,7 @@ const Navbar = () => {
                         ? "is-primary is-fullwidth"
                         : "is-white is-outlined"
                     }`}
+                    target="_blank"
                   >
                     Invite
                   </a>
