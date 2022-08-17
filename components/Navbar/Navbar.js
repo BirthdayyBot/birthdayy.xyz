@@ -83,7 +83,7 @@ const Navbar = () => {
                     }`}
                     target="_blank"
                   >
-                    Support Discord
+                    Discord
                   </a>
                 </Link>
 
