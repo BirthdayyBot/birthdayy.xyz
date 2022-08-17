@@ -22,11 +22,17 @@ $secondary: #f3969a;
 $highlight: #e9495c;
 $highlight: #2c2f36;
 
+$danger: $secondary;
+
 .is-color-primary {
   color: #78c2ad;
 }
 .has-text-secondary {
   color: $secondary;
+}
+.is-secondary {
+  background-color: $secondary !important;
+  color: $white !important;
 }
 
 /*

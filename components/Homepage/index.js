@@ -1,11 +1,13 @@
 import style from "../../styles/Index.module.scss";
-import Title from "./Title";
+import CallToAction from "./CallToAction";
+import TitleComponent from "./Title";
 const IndexComponent = () => {
   return (
     <>
       <div className={style.section_one}>
         <div className="container">
-          <Title />
+          <TitleComponent />
+          <CallToAction />
         </div>
         {/* <h1 className="title">Homepage</h1> */}
       </div>
