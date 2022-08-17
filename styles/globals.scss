@@ -1,0 +1,18 @@
+@charset "utf-8";
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../styles/theme/theme";
+@import "../node_modules/bulma/bulma";
+
+* {
+  box-sizing: border-box;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }
