@@ -3,6 +3,7 @@
 @import "./fonts";
 @import "./colors";
 
+$body-overflow-y: auto;
 
 .is-secondary {
   color: $secondary;
@@ -51,4 +52,16 @@
 ::selection {
   color: dimgray;
   background: $primary;
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    overflow-y: auto;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+  body::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
