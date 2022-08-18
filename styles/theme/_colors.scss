@@ -6,9 +6,11 @@ $purple: #bcacdf;
 $orange: #e9495c;
 $cyan: #046589;
 $blue: #7892c2;
+$white: #fdfdfd;
 
 //derived variables
-$light: #b8ded6;
+// $light: #b8ded6;
+$light: #dfe3e2;
 $dark: #262828;
 
 $primary: $turquoise;
@@ -23,6 +25,7 @@ $highlight: #e9495c;
 $highlight: #2c2f36;
 
 $danger: $secondary;
+
 
 .is-color-primary {
   color: #78c2ad;

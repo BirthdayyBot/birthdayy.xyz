@@ -1,0 +1,23 @@
+.navbar_component {
+  background-image: url("../public/media/images/background/wave_upside_3.svg");
+  background-attachment: local;
+  background-size: cover; //cover; contain; 500px 250px; auto;
+  background-clip: border-box;
+  background-position: top left;
+  // margin-right: -10;
+}
+@media (min-width: 0px) and (max-width: 900px) {
+  .navbar_component {
+    min-height: 22rem;
+  }
+}
+@media (min-width: 901px) and (max-width: 2000px) {
+  .navbar_component {
+    min-height: 24rem;
+  }
+}
+@media (min-width: 2001px) {
+  .navbar_component {
+    min-height: 29rem;
+  }
+}

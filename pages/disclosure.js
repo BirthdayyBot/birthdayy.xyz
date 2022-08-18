@@ -1,14 +1,13 @@
 const DisclosurePage = () => {
   return (
-    <div className="disclosure">
+    <div className="disclosure container">
       <h1 className="is-title">Impressum</h1>
       <p className="is-text">
-        Nikolai Schunk <br />
-        Mainaustrasse 31 <br />
-        8008 Zuerich <br />
+        Nikolai Schunk <cursive></cursive>alias
+        <br />
+        Chillihero
       </p>
       <h3 className="is-sub-header">Kontakt</h3>
-      Telefon: +41 78 672 87 29 <br />
       E-Mail: contact@schunk.dev <br />
       <h3 className="is-sub-header" id="Liability-disclaimer">
         Haftungsausschluss

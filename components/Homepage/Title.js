@@ -15,7 +15,7 @@ const TitleComponent = () => {
                 DISCORD BOT
               </h1>
             </div>
-            <div className="column is-4 is-hidden-touch">
+            <div className="column is-4 is-hidden-touch is-unselectable">
               <Image
                 src="/media/images/birthdayy-logo.png"
                 alt="Birthdayy"
