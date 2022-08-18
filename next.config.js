@@ -37,7 +37,7 @@ const nextConfig = {
       },
       {
         source: "/botgg",
-        destination: "https://bop.gg/birthdayy",
+        destination: "https://bot.gg/birthdayy",
         permanent: true,
       },
       {
