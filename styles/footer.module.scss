@@ -1,8 +1,19 @@
 .footer_component {
-  background-color: #78c2ad;
   padding-top: 0.75rem;
-  // padding-bottom: 0.75rem;
-  height: 10rem;
-  // position: sticky;
-  // bottom: 0;
+  background-image: url("../public/media/images/background/bottom_wave.svg");
+  background-attachment: initial;
+  background-size: cover; //cover; contain; 500px 250px; auto;
+  height: 20rem;
+  background-clip: border-box;
+  background-position: top left;
+}
+// @media (min-height: 1080px) {
+//   .footer_component {
+//     position: sticky;
+//     bottom: 0;
+//   }
+// }
+.footer_content {
+  //align text always 50% inside of the footer
+  margin-top: 10rem;
 }

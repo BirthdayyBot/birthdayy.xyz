@@ -3,8 +3,8 @@
 @import "./fonts";
 @import "./colors";
 
-$body-overflow-y: auto;
-
+// $body-background-color: $light;
+$background-dark: $dark;
 .is-secondary {
   color: $secondary;
   background-color: $secondary;

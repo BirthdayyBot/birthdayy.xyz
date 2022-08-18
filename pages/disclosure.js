@@ -1,6 +1,6 @@
 const DisclosurePage = () => {
   return (
-    <div className="disclosure">
+    <div className="disclosure container">
       <h1 className="is-title">Impressum</h1>
       <p className="is-text">
         Nikolai Schunk <br />

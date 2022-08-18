@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <div className={style.navbar_component}>
       <nav
-        className="navbar is-primary is-spaced is-transparent"
+        className="navbar is-primary is-spaced"
         role="navigation"
         aria-label="main navigation"
       >
