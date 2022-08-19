@@ -27,8 +27,8 @@ const TitleComponent = () => {
           <div className="columns">
             <div className="column">
               <h4 className="is-size-4 is-sub-header">
-                Your good look and easy-to-use Birthday Helper for your Discord
-                Server
+                Your easy-to-use, aesthetic and customizable Birthday Bot for
+                any Discord Server
               </h4>
             </div>
           </div>
