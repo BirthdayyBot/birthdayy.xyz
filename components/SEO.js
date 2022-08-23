@@ -57,16 +57,29 @@ const socialTags = ({
 };
 
 const SEO = (props) => {
-  const { title, description, image } = props;
+  const {
+    title,
+    author,
+    language,
+    keywords,
+    robots,
+    rating,
+    description,
+    image,
+  } = props;
   return (
     <Head>
-      <title>{title} | App</title>
-      <meta name="description" content={description} />
+      <title>
+        {title === SEO.defaultProps.title ? title : `${title} | Birthdayy`}
+      </title>
       <meta itemProp="name" content={title} />
+
       <meta itemProp="description" content={description} />
-      <meta itemProp="author" content="chillihero, nikolai schunk" />
-      <meta itemProp="robots" content="index, follow" />
-      <meta itemProp="rating" content="safe for kids" />
+      <meta itemProp="author" content={author} />
+      <meta itemProp="language" content={language} />
+      <meta itemProp="keywords" content={keywords}></meta>
+      <meta itemProp="robots" content={robots} />
+      <meta itemProp="rating" content={rating} />
       <meta itemProp="image" content={image} />
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} name={name} content={content} />;
@@ -79,6 +92,11 @@ SEO.defaultProps = {
   url: "/",
   type: "website",
   title: settings && settings.meta && settings.meta.title,
+  author: settings && settings.meta && settings.meta.author,
+  language: settings && settings.meta && settings.meta.language,
+  keywords: settings && settings.meta && settings.meta.keywords,
+  robots: settings && settings.meta && settings.meta.robots,
+  rating: settings && settings.meta && settings.meta.rating,
   description: settings && settings.meta && settings.meta.description,
   image:
     settings &&
