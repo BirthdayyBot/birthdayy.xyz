@@ -73,7 +73,6 @@ const SEO = (props) => {
         {title === SEO.defaultProps.title ? title : `${title} | Birthdayy`}
       </title>
       <meta itemProp="name" content={title} />
-
       <meta itemProp="description" content={description} />
       <meta itemProp="author" content={author} />
       <meta itemProp="language" content={language} />
@@ -81,6 +80,20 @@ const SEO = (props) => {
       <meta itemProp="robots" content={robots} />
       <meta itemProp="rating" content={rating} />
       <meta itemProp="image" content={image} />
+      <meta itemProp="theme-color" content="##78c2ad" />
+      {socialTags(props).map(({ name, content }) => {
+        return <meta key={name} name={name} content={content} />;
+      })}
+
+      <meta name="name" content={title} />
+      <meta name="description" content={description} />
+      <meta name="author" content={author} />
+      <meta name="language" content={language} />
+      <meta name="keywords" content={keywords}></meta>
+      <meta name="robots" content={robots} />
+      <meta name="rating" content={rating} />
+      <meta name="image" content={image} />
+      <meta name="theme-color" content="##78c2ad" />
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} name={name} content={content} />;
       })}
