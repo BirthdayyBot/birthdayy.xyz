@@ -51,10 +51,10 @@ const socialTags = ({
       name: "og:modified_time",
       content: updatedAt || new Date().toISOString(),
     },
-    {
-      name: "theme-color",
-      content: "##78c2ad",
-    },
+    // {
+    //   name: "theme-color",
+    //   content: "#78c2ad",
+    // },
   ];
 
   return metaTags;
@@ -96,7 +96,7 @@ const SEO = (props) => {
       <meta name="robots" content={robots} key="robots" />
       <meta name="rating" content={rating} key="rating" />
       <meta name="image" content={image} key="image" />
-      <meta name="theme-color" content="##78c2ad" key="theme-color" />
+      <meta name="theme-color" content="#78c2ad" key="theme-color" />
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} name={name} content={content} />;
       })}
