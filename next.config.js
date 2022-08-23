@@ -10,6 +10,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/docs",
+        destination: "https://docs.birthdayy.xyz/",
+        permanent: true,
+      },
+      {
+        source: "/status",
+        destination: "https://status.birthdayy.xyz/",
+        permanent: true,
+      },
+      {
         source: "/invite",
         destination:
           "https://discord.com/oauth2/authorize?client_id=916434908728164372&permissions=525529836753&scope=applications.commands%20bot",
