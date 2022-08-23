@@ -51,6 +51,10 @@ const socialTags = ({
       name: "og:modified_time",
       content: updatedAt || new Date().toISOString(),
     },
+    {
+      name: "theme-color",
+      content: "##78c2ad",
+    },
   ];
 
   return metaTags;
