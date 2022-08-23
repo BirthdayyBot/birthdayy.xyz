@@ -5,6 +5,7 @@ import SEO from "./SEO";
 const Layout = ({ children }) => {
   return (
     <>
+      <SEO />
       {/* <SEO title={`Homepage`} /> */}
       <Navbar />
       <div className="is-fluid">
