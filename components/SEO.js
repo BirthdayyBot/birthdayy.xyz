@@ -51,6 +51,10 @@ const socialTags = ({
       name: "og:modified_time",
       content: updatedAt || new Date().toISOString(),
     },
+    // {
+    //   name: "theme-color",
+    //   content: "#78c2ad",
+    // },
   ];
 
   return metaTags;
@@ -72,28 +76,27 @@ const SEO = (props) => {
       <title>
         {title === SEO.defaultProps.title ? title : `${title} | Birthdayy`}
       </title>
-      <meta itemProp="name" content={title} />
-      <meta itemProp="description" content={description} />
-      <meta itemProp="author" content={author} />
-      <meta itemProp="language" content={language} />
-      <meta itemProp="keywords" content={keywords}></meta>
-      <meta itemProp="robots" content={robots} />
-      <meta itemProp="rating" content={rating} />
-      <meta itemProp="image" content={image} />
-      <meta itemProp="theme-color" content="##78c2ad" />
+      <meta name="name" content={title} key="title" />
+      <meta itemProp="description" content={description} key="description" />
+      <meta itemProp="author" content={author} key="author" />
+      <meta itemProp="language" content={language} key="language" />
+      <meta itemProp="keywords" content={keywords} key="keywords" />
+      <meta itemProp="robots" content={robots} key="robots" />
+      <meta itemProp="rating" content={rating} key="rating" />
+      <meta itemProp="image" content={image} key="image" />
+      <meta itemProp="theme-color" content="##78c2ad" key="theme-color" />
       {socialTags(props).map(({ name, content }) => {
-        return <meta key={name} name={name} content={content} />;
+        return <meta key={name} itemProp={name} content={content} />;
       })}
-
-      <meta name="name" content={title} />
-      <meta name="description" content={description} />
-      <meta name="author" content={author} />
-      <meta name="language" content={language} />
-      <meta name="keywords" content={keywords}></meta>
-      <meta name="robots" content={robots} />
-      <meta name="rating" content={rating} />
-      <meta name="image" content={image} />
-      <meta name="theme-color" content="##78c2ad" />
+      <meta name="name" content={title} key="title" />
+      <meta name="description" content={description} key="description" />
+      <meta name="author" content={author} key="author" />
+      <meta name="language" content={language} key="language" />
+      <meta name="keywords" content={keywords} key="keywords" />
+      <meta name="robots" content={robots} key="robots" />
+      <meta name="rating" content={rating} key="rating" />
+      <meta name="image" content={image} key="image" />
+      <meta name="theme-color" content="#78c2ad" key="theme-color" />
       {socialTags(props).map(({ name, content }) => {
         return <meta key={name} name={name} content={content} />;
       })}

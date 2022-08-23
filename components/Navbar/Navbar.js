@@ -53,7 +53,7 @@ const Navbar = () => {
             <NavbarItem label="Docs" url="https://docs.birthdayy.xyz/" newTab />
             <NavbarItem label="Vote" url="/vote" newTab />
             <NavbarItem label="Premium" url="/premium" newTab />
-
+            <NavbarItem label="Status" url="/status " newTab />
             <NavbarDropdown label="Commands">
               <NavbarItem
                 label="General"
