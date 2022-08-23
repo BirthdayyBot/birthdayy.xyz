@@ -60,6 +60,16 @@ const nextConfig = {
         destination: "https://discord-botlist.eu/vote/916434908728164372",
         permanent: true,
       },
+      {
+        source: "/tos",
+        destination: "https://www.websitepolicies.com/policies/view/kb0ati9q",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "https://www.websitepolicies.com/policies/view/g9a126jo",
+        permanent: true,
+      },
     ];
   },
 };
