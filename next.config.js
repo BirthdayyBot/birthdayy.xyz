@@ -61,6 +61,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/discordlist",
+        destination: "https://discordlist.gg/bot/916434908728164372",
+        permanent: true,
+      },
+      {
+        source: "/discordlist/vote",
+        destination: "https://discordlist.gg/bot/916434908728164372/vote",
+        permanent: true,
+      },
+      {
         source: "/tos",
         destination: "https://www.websitepolicies.com/policies/view/kb0ati9q",
         permanent: true,
