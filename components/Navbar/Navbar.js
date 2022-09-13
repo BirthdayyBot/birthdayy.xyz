@@ -51,7 +51,7 @@ const Navbar = () => {
         >
           <div className="navbar-start">
             <NavbarItem label="Docs" url="https://docs.birthdayy.xyz/" newTab />
-            <NavbarItem label="Vote" url="/vote" newTab />
+            <NavbarItem label="Vote" url="/vote" />
             <NavbarItem label="Premium" url="/premium" newTab />
             <NavbarItem label="Status" url="/status " newTab />
             <NavbarDropdown label="Commands">
