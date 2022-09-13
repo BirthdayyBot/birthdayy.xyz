@@ -45,12 +45,12 @@ $background-dark: $dark;
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: dimgray;
+  color: gray;
   background: $primary;
 }
 
 ::selection {
-  color: dimgray;
+  color: gray;
   background: $primary;
 }
 
