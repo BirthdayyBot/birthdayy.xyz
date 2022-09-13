@@ -2,12 +2,12 @@ import Image from "next/image";
 import style from "../../styles/Index.module.scss";
 const TitleComponent = () => {
   return (
-    <div className={style.title_component}>
-      <div className="columns is-centered is-mobile">
+    <div className={`${style.title_component}`}>
+      <div className="columns">
         <div className="column is-10">
           <div className="columns">
             <div className="column is-7">
-              <h1 className="title is-unselectable is-size-1-touch">
+              <h1 className="title is-size-1-touch">
                 THE BEST
                 <br />
                 <span className="is-color-primary">BIRTHDAYY</span>
