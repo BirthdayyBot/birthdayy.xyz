@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <SEO />
       {/* <SEO title={`Homepage`} /> */}
       <Navbar />
-      <div className="is-fluid">
+      <div className="container is-fluid">
         <main>{children}</main>
       </div>
       <Footer />
