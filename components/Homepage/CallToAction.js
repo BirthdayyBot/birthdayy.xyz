@@ -6,7 +6,6 @@ const CallToActionComponent = () => {
       {/*show only on desktop*/}
       <div className="is-hidden-touch">
         <div className="columns">
-          <div className="column is-1"></div>
           <div className="column is-4">
             <Link href="/invite">
               <button className="button is-primary is-large is-fullwidth is-rounded">
@@ -18,8 +17,8 @@ const CallToActionComponent = () => {
       </div>
       {/*show only on mobile*/}
       <div className="is-hidden-desktop">
-        <div className="columns is-mobile">
-        <div className="column is-1"></div>
+        <div className="columns is-mobile is-centered">
+          {/* <div className="column is-1"></div> */}
           <div className="column is-10">
             <Link href="/invite">
               <button className="button is-primary is-large is-fullwidth is-rounded">
