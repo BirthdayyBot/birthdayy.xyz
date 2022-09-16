@@ -11,16 +11,19 @@ const VoteComponent = () => {
       <h4 className="is-sub-title is-4">
         Vote for Birthdayy on the following sites to help us grow!
       </h4>
-      {VoteSites.map((element) => {
-        return (
-          <VoteElement
-            key={element.id.toString()}
-            name={element.name}
-            url={element.url}
-            icon={element.icon}
-          />
-        );
-      })}
+
+      <div className="columns is-multiline mt-3">
+        {VoteSites.map((element) => {
+          return (
+            <VoteElement
+              key={element.id.toString()}
+              name={element.name}
+              url={element.url}
+              icon={element.icon}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
