@@ -6,7 +6,7 @@ const _Link = ({ children, url, newTab }) => {
       <Link href={url}>
         <a
           target={newTab ? "_blank" : ""}
-          style={{ textDecoration: "inherit" }}
+          style={{ textDecoration: "inherit", color: "inherit" }}
         >
           {children}
         </a>
