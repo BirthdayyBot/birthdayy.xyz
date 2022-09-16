@@ -6,8 +6,8 @@ const { VoteSites } = require("../../db/voteSites");
 const VoteComponent = () => {
   return (
     <div className={`${style.vote_component}`}>
-      <SEO title={`Vote List`} />
-      <h1 className="is-title is-1">Vote List</h1>
+      <SEO title={`Vote for us`} />
+      <h1 className="is-title">Vote List</h1>
       <h4 className="is-sub-title is-4">
         Vote for Birthdayy on the following sites to help us grow!
       </h4>
