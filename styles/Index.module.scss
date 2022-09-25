@@ -4,3 +4,19 @@
     font-family: "Rubik", sans-serif;
   }
 }
+
+.spacer {
+  min-height: 4rem;
+  //make a sick spacer
+}
+
+.is_mid {
+  //margin top and bottomn same
+  margin-top: 2rem;
+  margin-bottom: auto;
+}
+
+.showcase_image {
+  //make the cornders of the image round
+  border-radius: 1rem;
+}
