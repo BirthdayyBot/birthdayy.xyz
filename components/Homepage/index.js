@@ -4,7 +4,7 @@ import TitleComponent from "./Title";
 const IndexComponent = () => {
   return (
     <>
-      <div className={`${style.section_one} container`}>
+      <div className={`container`}>
         <TitleComponent />
         <CallToAction />
       </div>

@@ -2,25 +2,25 @@ export const VoteSites = [
   {
     id: 1,
     name: "Top.gg",
-    url: "https://top.gg/bot/916434908728164372/vote",
+    url: "https://birthdayy.xyz/topgg/vote",
     icon: "/media/images/vote/topgg.png",
   },
   {
     id: 2,
     name: "Bot.gg",
-    url: "https://bot.gg/birthdayy",
+    url: "https://birthdayy.xyz/botgg",
     icon: "/media/images/vote/botgg.png",
   },
   {
     id: 3,
     name: "DBL",
-    url: "https://discordbotlist.com/bots/birthdayy/upvote",
+    url: "https://birthdayy.xyz/discord-botlist/vote",
     icon: "/media/images/vote/discordbotlist.png",
   },
   {
     id: 4,
     name: "DL",
-    url: "https://discordlist.gg/bot/916434908728164372/vote",
+    url: "https://birthdayy.xyz/discordlist/vote",
     icon: "/media/images/vote/discordlist.png",
   },
 ];
