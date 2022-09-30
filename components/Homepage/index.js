@@ -1,5 +1,5 @@
-import style from "../../styles/Index.module.scss";
 import CallToAction from "./CallToAction";
+import FeatureComponent from "./Feature";
 import TitleComponent from "./Title";
 const IndexComponent = () => {
   return (
@@ -7,6 +7,7 @@ const IndexComponent = () => {
       <div className={`container`}>
         <TitleComponent />
         <CallToAction />
+        <FeatureComponent />
       </div>
     </>
   );
