@@ -21,6 +21,26 @@ const FeatureComponent = () => {
         soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
         ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
         quae quas harum.`}
+      />{" "}
+      <Feature
+        isNormal={false}
+        title={"Register your Birthday"}
+        imageName={"birthday-register-year-optional"}
+        points={["Maximum Configurability", "Control over your Settings"]}
+        description={`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
+        soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
+        ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
+        quae quas harum.`}
+      />{" "}
+      <Feature
+        isNormal
+        title={"Birthday List"}
+        imageName={"birthday-list"}
+        points={["Maximum Configurability", "Control over your Settings"]}
+        description={`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
+        soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
+        ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
+        quae quas harum.`}
       />
       <Feature
         isNormal={false}
