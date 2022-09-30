@@ -21,6 +21,7 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
         className = "is-hidden-tablet";
         break;
     }
+    //replace all dashes with spaces
     return (
       <div className={`column is-5 ${className}`}>
         <div>
@@ -28,7 +29,7 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
             src={`/media/images/features/${imageName}.webp`}
             width={1920}
             height={1680}
-            alt={`Image of ${imageName} Feature`}
+            alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
             className={`${style.showcase_image}`}
           />
         </div>
@@ -47,9 +48,7 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
     return (
       <div className="column is-3">
         <h3 className="block is-title is-size-3 mt-5">{title}</h3>
-        <p className="block is-sub-title">
-          {description}
-        </p>
+        <p className="block is-sub-title">{description}</p>
         <p className="block is-sub-title">{generatedPoints}</p>
       </div>
     );
