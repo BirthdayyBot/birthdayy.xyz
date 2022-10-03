@@ -1,5 +1,10 @@
+import TagComponent from "./Tag";
+
 const FeatureTagsComponent = () => {
-  const tag = (prefix, name) => {
+  const tag = (color, label) => {
+    return <span className={`tag is-${color}`}>{label}</span>;
+
+    // const tag = (prefix, name) => {
     return (
       <div className="control">
         <div className="tags has-addons is-medium">
@@ -9,22 +14,26 @@ const FeatureTagsComponent = () => {
       </div>
     );
   };
-
+  const birthdayColor = "primary";
+  const configColor = "light";
   return (
     <>
       <div className="columns is-centered">
-        <div className="column is-6">
+        <div className="column is-7">
           <div className="tags is-centered">
-            {/* {tag("Birthday", "Announcement")}
-            {tag("Birthday", "Register")}
-            {tag("Birthday", "List")}
-            {tag("Birthday", "Update")}
-            {tag("Birthday", "Delete")} */}
+            <TagComponent label="Birthday Register" color={birthdayColor} />
+            <TagComponent label="Birthday Update" color={birthdayColor} />
+            <TagComponent label="Birthday Remove" color={birthdayColor} />
+            <TagComponent label="Birthday List" color={birthdayColor} />
+            <TagComponent label="Birthday Test" color={birthdayColor} />
 
-            {/* {tag("Config", "Announcement")} */}
-            
-            <span className="tag is-primary">Birthday Announcement</span>
-            <span className="tag is-primary">Birthday </span>
+            <TagComponent label="Config Announcement" color={configColor} />
+            <TagComponent label="Config Ping Role" color={configColor} />
+            <TagComponent label="Config Birthday Role" color={configColor} />
+            <TagComponent label="Config Overview" color={configColor} />
+            <TagComponent label="Config Status" color={configColor} />
+
+            {/* <span className="tag is-primary">Birthday </span>
             <span className="tag is-primary">Seven</span>
             <span className="tag is-primary">Seven</span>
 
@@ -42,7 +51,7 @@ const FeatureTagsComponent = () => {
             <span className="tag is-info">Info</span>
             <span className="tag is-success">Success</span>
             <span className="tag is-warning">Warning</span>
-            <span className="tag is-danger">Danger</span>
+            <span className="tag is-danger">Danger</span> */}
           </div>
         </div>
       </div>
