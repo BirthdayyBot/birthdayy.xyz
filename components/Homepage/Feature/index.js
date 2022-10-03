@@ -10,47 +10,35 @@ const FeatureComponent = () => {
   return (
     <div className="feature_component container mt-5">
       <div className={`${style.spacer}`}></div>
-      <h1 className="is-title is-size-1 has-text-centered">Features</h1>
+      <h1 className="is-title is-size-1 has-text-centered">My Features</h1>
       <FeatureTagsComponent />
       <Feature
         isNormal
         title={"Birthday Announcement"}
         imageName={"announcement"}
-        points={["Maximum Configurability", "Control over your Settings"]}
-        description={`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
-        soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
-        ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
-        quae quas harum.`}
-      />{" "}
+        points={["Customizable Message", "Ping a Role"]}
+        description={`Send out a nice Birthday Announcement Message on someones Birthday and congratulate them.`}
+      />
       <Feature
         isNormal={false}
         title={"Register your Birthday"}
         imageName={"birthday-register-year-optional"}
-        points={["Maximum Configurability", "Control over your Settings"]}
-        description={`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
-        soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
-        ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
-        quae quas harum.`}
-      />{" "}
+        points={["Optional Year addable", "Register Birthdays for others"]}
+        description={`Easily register your Birthday in the Server. With or without Year. You're in control!`}
+      />
       <Feature
         isNormal
         title={"Birthday List"}
         imageName={"birthday-list"}
-        points={["Maximum Configurability", "Control over your Settings"]}
-        description={`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
-        soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
-        ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
-        quae quas harum.`}
+        points={["Clean Overview", "Sort by Month"]}
+        description={`Get an Overview over all Birthdays in your Server. All sorted by their Month and Day.`}
       />
       <Feature
         isNormal={false}
-        title={"Config Overview"}
+        title={"Server Configuration"}
         imageName={"config-status"}
         points={["Maximum Configurability", "Control over your Settings"]}
-        description={`Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
-        soluta voluptatibus autem molestias vel fuga voluptatem nostrum dicta
-        ducimus quibusdam porro nam tenetur, dolore veritatis magni, illum
-        quae quas harum.`}
+        description={`Customize the Bot's Settings to your Servers needs. `}
       />
     </div>
   );
