@@ -19,7 +19,7 @@ const FeatureTagsComponent = () => {
   return (
     <>
       <div className="columns is-centered">
-        <div className="column is-7">
+        <div className="column is-5">
           <div className="tags is-centered">
             <TagComponent label="Birthday Register" color={birthdayColor} />
             <TagComponent label="Birthday Update" color={birthdayColor} />

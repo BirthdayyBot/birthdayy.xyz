@@ -23,17 +23,19 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
     }
     //replace all dashes with spaces
     return (
-      <div className={`column is-5 ${className}`}>
-        <div>
-          <Image
-            src={`/media/images/features/${imageName}.webp`}
-            width={1920}
-            height={1680}
-            alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
-            className={`${style.showcase_image}`}
-          />
+      <>
+        <div className={`column is-3 ${className}`}>
+          <div>
+            <Image
+              src={`/media/images/features/${imageName}.webp`}
+              width={1920}
+              height={1680}
+              alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
+              className={`${style.showcase_image}`}
+            />
+          </div>
         </div>
-      </div>
+      </>
     );
   };
 
@@ -46,11 +48,15 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
         })
       : "";
     return (
-      <div className="column is-3">
-        <h3 className="block is-title is-size-3 mt-5">{title}</h3>
-        <p className="block is-sub-title">{description}</p>
-        <p className="block is-sub-title">{generatedPoints}</p>
-      </div>
+      <>
+        <div className="column is-2">
+          <h3 className="block is-title is-size-3 mt-5  has-text-centered-touch">
+            {title}
+          </h3>
+          <p className="block is-sub-title">{description}</p>
+          <p className="block is-sub-title">{generatedPoints}</p>
+        </div>
+      </>
     );
   };
   function generatePoint(point) {
@@ -59,7 +65,8 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
 
   if (isNormal) {
     return (
-      <div className="feature columns is-multiline is-centered">
+      <div className="feature columns is-centered is-multiline">
+        {/* <div className="column is-4"></div> */}
         {textComponent(title, description, points)}
         {imageComponent(imageName)}
       </div>
@@ -67,7 +74,8 @@ const Feature = ({ isNormal, imageName, title, description, points }) => {
   }
 
   return (
-    <div className="feature columns is-multiline is-centered">
+    <div className="feature columns is-centered is-multiline">
+      {/* <div className="column is-4"></div> */}
       {imageComponent(imageName, true)}
       {textComponent(title, description, points)}
       {imageComponent(imageName, false)}
