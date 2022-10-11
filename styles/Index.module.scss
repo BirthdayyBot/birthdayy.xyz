@@ -4,3 +4,38 @@
     font-family: "Rubik", sans-serif;
   }
 }
+
+.spacer {
+  min-height: 10rem;
+  // background-image: url("../public/media/images/background/devider_line2.svg");
+  // background-attachment: local;
+  // background-size: contain; //cover; contain; 500px 250px; auto;
+  // background-clip: border-box;
+  // background-position: top left;
+  // margin-right: -10;
+  // background-repeat: no-repeat;
+}
+@media (min-width: 0px) and (max-width: 900px) {
+  .navbar_component {
+    // min-height: 22rem;
+  }
+}
+@media (min-width: 901px) and (max-width: 2000px) {
+  .navbar_component {
+    // min-height: 24rem;
+  }
+}
+@media (min-width: 2001px) {
+  .navbar_component {
+    // min-height: 29rem;
+  }
+}
+
+.is_mid {
+  margin-top: 2rem;
+  margin-bottom: auto;
+}
+
+.showcase_image {
+  border-radius: 1rem;
+}

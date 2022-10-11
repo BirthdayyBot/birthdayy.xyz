@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <SEO />
       {/* <SEO title={`Homepage`} /> */}
       <Navbar />
-      <div className="container is-fluid min-height">
+      <div className="min-height">
         <main>{children}</main>
       </div>
       <Footer />

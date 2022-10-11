@@ -19,8 +19,8 @@ function hasIcon(newTab, label) {
   if (newTab) {
     return (
       <span className="icon-text">
-        <span className="icon">{newTab ? <NewTabIcon /> : ""}</span>
         <span>{label}</span>
+        <span className="icon">{newTab ? <NewTabIcon /> : ""}</span>
       </span>
     );
   } else {

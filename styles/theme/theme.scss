@@ -65,3 +65,24 @@ $background-dark: $dark;
     width: 0 !important;
   }
 }
+
+$divider-margin-inner-size: 0rem;
+
+ruby {
+  position: relative;
+}
+
+ruby::before {
+  /* Highlight color */
+  // border: 1px solid;
+  text-decoration: none;
+  background-color: rgba(120, 194, 173, 0.9);
+  content: "";
+  position: absolute;
+  width: calc(100% + 6px);
+  height: 50%;
+  left: -3px;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(-1deg);
+}
