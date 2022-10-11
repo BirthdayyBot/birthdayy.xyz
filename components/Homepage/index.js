@@ -1,12 +1,13 @@
 import CallToAction from "./CallToAction";
 import FeatureComponent from "./Feature";
 import TitleComponent from "./Title";
+import style from "../../styles/Index.module.scss";
 const IndexComponent = () => {
   return (
     <>
-      <div className={`container`}>
+      <div className={`index-component`}>
         <TitleComponent />
-        <CallToAction />
+        <div className={`${style.spacer}`}></div>
         <FeatureComponent />
       </div>
     </>
