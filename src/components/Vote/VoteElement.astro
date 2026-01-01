@@ -1,0 +1,52 @@
+---
+import { NewTab } from "../Generic/Icon.jsx";
+import style from "../../styles/vote.module.scss";
+
+const { name, url, icon } = Astro.props;
+---
+
+<div class="vote_element column is-6">
+  <a href={url} target="_blank" style="text-decoration: inherit; color: inherit;">
+    <div class={style.hoverEffect}>
+      <article class="notification is-primary">
+        <div class="columns is-vcentered is-mobile">
+          <!-- HIDDEN MOBILE -->
+          <div class="column is-3 is-hidden-touch">
+            <figure class="image">
+              <img
+                src={icon}
+                width="80"
+                height="80"
+                alt="Placeholder image"
+                class={style.site_logo}
+              />
+            </figure>
+          </div>
+
+          <div class="column is-3 is-hidden-desktop">
+            <figure class="image">
+              <img
+                src={icon}
+                width="120"
+                height="120"
+                alt="Placeholder image"
+                class={style.site_logo}
+              />
+            </figure>
+          </div>
+
+          <div class="column is-6">
+            <span class="icon-text">
+              <span>
+                <h4 class="is-title">{name}</h4>
+              </span>
+              <span class="icon is-medium is-hidden-touch">
+                <NewTab color="currentColor" size="4em" client:load />
+              </span>
+            </span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </a>
+</div>

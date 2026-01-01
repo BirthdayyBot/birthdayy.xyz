@@ -1,0 +1,11 @@
+---
+import style from "../../styles/footer.module.scss";
+const currentYear = new Date().getFullYear();
+---
+
+<div class={style.footer_component}>
+  <div class={`${style.footer_content} has-text-centered`}>
+    <p>Birthdayy - {currentYear}</p>
+    <a href="/disclosure" class="is-text has-text-white">Legal Disclosure</a>
+  </div>
+</div>

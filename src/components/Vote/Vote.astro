@@ -1,0 +1,22 @@
+---
+import VoteElement from "./VoteElement.astro";
+import style from "../../styles/vote.module.scss";
+import { VoteSites } from "../../data/voteSites.js";
+---
+
+<div class={style.vote_component}>
+  <h1 class="is-title">Vote List</h1>
+  <h4 class="is-sub-title is-4">
+    Vote for Birthdayy on the following sites to help us grow!
+  </h4>
+
+  <div class="columns is-multiline mt-3">
+    {VoteSites.map((element) => (
+      <VoteElement
+        name={element.name}
+        url={element.url}
+        icon={element.icon}
+      />
+    ))}
+  </div>
+</div>

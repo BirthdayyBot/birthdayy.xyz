@@ -1,0 +1,70 @@
+---
+import settings from "../config";
+
+const {
+  url = "/",
+  type = "website",
+  title = settings?.meta?.title,
+  author = settings?.meta?.author,
+  language = settings?.meta?.language,
+  keywords = settings?.meta?.keywords,
+  robots = settings?.meta?.robots,
+  rating = settings?.meta?.rating,
+  description = settings?.meta?.description,
+  image = settings?.meta?.social?.graphic,
+  createdAt,
+  updatedAt,
+} = Astro.props;
+
+const pageTitle = title === settings?.meta?.title ? title : `${title} | Birthdayy`;
+const twitterHandle = settings?.meta?.social?.twitter;
+const siteName = settings?.meta?.title;
+const publishedTime = createdAt || new Date().toISOString();
+const modifiedTime = updatedAt || new Date().toISOString();
+---
+
+<head>
+  <title>{pageTitle}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <meta name="name" content={title} />
+  <meta name="description" content={description} />
+  <meta name="author" content={author} />
+  <meta name="language" content={language} />
+  <meta name="keywords" content={keywords} />
+  <meta name="robots" content={robots} />
+  <meta name="rating" content={rating} />
+  <meta name="image" content={image} />
+  <meta name="theme-color" content="#78c2ad" />
+
+  <!-- itemProp Meta Tags -->
+  <meta itemprop="name" content={title} />
+  <meta itemprop="description" content={description} />
+  <meta itemprop="author" content={author} />
+  <meta itemprop="language" content={language} />
+  <meta itemprop="keywords" content={keywords} />
+  <meta itemprop="robots" content={robots} />
+  <meta itemprop="rating" content={rating} />
+  <meta itemprop="image" content={image} />
+  <meta itemprop="theme-color" content="#78c2ad" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content={twitterHandle} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:creator" content={twitterHandle} />
+  <meta name="twitter:image:src" content={image} />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content={title} />
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={image} />
+  <meta property="og:description" content={description} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:published_time" content={publishedTime} />
+  <meta property="og:modified_time" content={modifiedTime} />
+</head>

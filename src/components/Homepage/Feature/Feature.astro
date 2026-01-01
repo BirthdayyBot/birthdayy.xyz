@@ -1,0 +1,90 @@
+---
+import style from "../../../styles/Index.module.scss";
+import Divider from "../../Generic/Divider.astro";
+import { ArrowRight } from "../../Generic/Icon.jsx";
+import IconText from "../../Generic/IconText.astro";
+
+const { isNormal, imageName, title, description, points } = Astro.props;
+---
+
+{isNormal ? (
+  <div class="feature columns is-centered is-multiline">
+    <!-- Text first -->
+    <div class="column is-2">
+      <h3 class="block is-title is-size-3 mt-5 has-text-centered-touch">
+        {title}
+      </h3>
+      <p class="block is-sub-title">{description}</p>
+      {points && (
+        <p class="block is-sub-title">
+          {points.map((point) => (
+            <IconText text={point}>
+              <ArrowRight slot="icon" client:load />
+            </IconText>
+          ))}
+        </p>
+      )}
+    </div>
+
+    <!-- Image second -->
+    <div class="column is-3">
+      <div>
+        <img
+          src={`/media/images/features/${imageName}.webp`}
+          width="1920"
+          height="1680"
+          loading="lazy"
+          alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
+          class={style.showcase_image}
+        />
+      </div>
+    </div>
+  </div>
+) : (
+  <div class="feature columns is-centered is-multiline">
+    <!-- Image first (hidden on mobile) -->
+    <div class="column is-3 is-hidden-mobile">
+      <div>
+        <img
+          src={`/media/images/features/${imageName}.webp`}
+          width="1920"
+          height="1680"
+          loading="lazy"
+          alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
+          class={style.showcase_image}
+        />
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="column is-2">
+      <h3 class="block is-title is-size-3 mt-5 has-text-centered-touch">
+        {title}
+      </h3>
+      <p class="block is-sub-title">{description}</p>
+      {points && (
+        <p class="block is-sub-title">
+          {points.map((point) => (
+            <IconText text={point}>
+              <ArrowRight slot="icon" client:load />
+            </IconText>
+          ))}
+        </p>
+      )}
+    </div>
+
+    <!-- Image (shown on mobile) -->
+    <div class="column is-3 is-hidden-tablet">
+      <div>
+        <img
+          src={`/media/images/features/${imageName}.webp`}
+          width="1920"
+          height="1680"
+          loading="lazy"
+          alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
+          class={style.showcase_image}
+        />
+      </div>
+    </div>
+  </div>
+)}

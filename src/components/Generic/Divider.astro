@@ -1,0 +1,13 @@
+---
+const { text, isVertical, left, right, color } = Astro.props;
+
+let classname = "is-family-title divider";
+classname = isVertical ? classname.concat(" is-vertical") : classname;
+classname = left ? classname.concat(" is-left") : classname;
+classname = right ? classname.concat(" is-right") : classname;
+const colorClass = color ? `is-${color}` : "";
+---
+
+<div class={`${classname} ${colorClass}`}>
+  {text || ""}
+</div>

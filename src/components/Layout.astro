@@ -1,0 +1,24 @@
+---
+import Navbar from "./Navbar/Navbar.jsx";
+import Footer from "./Footer/Footer.astro";
+import SEO from "./SEO.astro";
+import "../styles/globals.scss";
+
+const { title, description, ...seoProps } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <SEO title={title} description={description} {...seoProps} />
+  <body>
+    <div class="app">
+      <Navbar client:load />
+      <div class="min-height">
+        <main>
+          <slot />
+        </main>
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>

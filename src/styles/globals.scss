@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../styles/theme/theme";
+@import "../node_modules/bulma/bulma";
+@import "@creativebulma/bulma-divider";
+
+* {
+  box-sizing: border-box;
+}
+
+@media (min-height: 0px) and (max-height: 1100px) {
+  .min-height {
+    min-height: 26rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-height: 1101px) {
+  .min-height {
+    min-height: 35rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }

@@ -1,0 +1,40 @@
+---
+import CallToAction from "./CallToAction.astro";
+import style from "../../styles/Index.module.scss";
+---
+
+<div class={`${style.title_component} container is-fluid`}>
+  <div class="columns">
+    <div class="column is-3"></div>
+    <div class="column is-10">
+      <div class="columns">
+        <div class="column is-5">
+          <h1 class="title is-size-1-touch">
+            THE BEST
+            <br />
+            <span class="is-color-primary">BIRTHDAYY</span>
+            <br />
+            DISCORD BOT
+          </h1>
+        </div>
+        <div class="column is-3 is-hidden-touch is-unselectable">
+          <img
+            src="/media/images/birthdayy-logo.png"
+            alt="Birthdayy"
+            width="280"
+            height="280"
+          />
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-8">
+          <h4 class="is-size-4 is-sub-header">
+            Your easy-to-use, aesthetic and customizable Birthday Bot for
+            any Discord Server
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <CallToAction />
+</div>
