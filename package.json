@@ -19,7 +19,7 @@
     "sass": "^1.54.0"
   },
   "devDependencies": {
-    "eslint": "8.57.1",
+    "eslint": "9.39.2",
     "eslint-config-next": "12.3.7"
   }
 }
