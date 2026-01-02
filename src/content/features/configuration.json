@@ -1,0 +1,7 @@
+{
+  "title": "Server Configuration",
+  "description": "Customize the Bot's Settings to your Servers needs.",
+  "imageName": "config-status",
+  "points": ["Maximum Configurability", "Control over your Settings"],
+  "imagePosition": "left"
+}

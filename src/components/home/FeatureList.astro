@@ -1,7 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import FeatureTags from "./FeatureTags.astro";
 import Feature from "./Feature.astro";
-import { features } from "../../data/features";
+
+const featuresCollection = await getCollection('features');
+const features = featuresCollection.map(entry => entry.data);
 ---
 
 <div class="feature_component">

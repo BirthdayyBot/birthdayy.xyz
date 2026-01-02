@@ -1,0 +1,7 @@
+{
+  "title": "Birthday List",
+  "description": "Get an Overview over all Birthdays in your Server. All sorted by their Month and Day.",
+  "imageName": "birthday-list",
+  "points": ["Clean Overview", "Sort by Month"],
+  "imagePosition": "right"
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Birthday Announcement",
+  "description": "Send out a nice Birthday Announcement Message on someones Birthday and congratulate them.",
+  "imageName": "announcement",
+  "points": ["Customizable Message", "Ping a Role"],
+  "imagePosition": "right"
+}

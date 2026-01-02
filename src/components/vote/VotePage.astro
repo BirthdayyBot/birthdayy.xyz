@@ -1,6 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import VoteItem from "./VoteItem.astro";
-import { VoteSites } from "../../data/voteSites.js";
+
+const voteSitesCollection = await getCollection('voteSites');
+const VoteSites = voteSitesCollection.map(entry => entry.data);
 ---
 
 <div class="vote_component">

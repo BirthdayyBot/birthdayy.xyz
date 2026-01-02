@@ -1,12 +1,9 @@
 ---
+import { getEntry } from 'astro:content';
 import CallToAction from "./CallToAction.astro";
-import { heroConfig } from "../../data/hero";
 
-interface Props {
-  config?: typeof heroConfig;
-}
-
-const { config = heroConfig } = Astro.props;
+const heroEntry = await getEntry('config', 'hero');
+const config = heroEntry.data;
 ---
 
 <header class="hero-section">

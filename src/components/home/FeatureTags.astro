@@ -1,6 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import FeatureTag from "./FeatureTag.astro";
-import { featureTags } from "../../data/featureTags";
+
+const featureTagsCollection = await getCollection('featureTags');
+const featureTags = featureTagsCollection.map(entry => entry.data);
 ---
 
 <div class="columns is-centered">

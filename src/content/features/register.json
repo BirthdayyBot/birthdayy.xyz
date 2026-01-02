@@ -1,0 +1,7 @@
+{
+  "title": "Register your Birthday",
+  "description": "Easily register your Birthday in the Server. With or without Year. You're in control!",
+  "imageName": "birthday-register-year-optional",
+  "points": ["Optional Year addable", "Register Birthday for others"],
+  "imagePosition": "left"
+}
