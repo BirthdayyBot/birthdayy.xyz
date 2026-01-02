@@ -4,94 +4,203 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the marketing website for Birthdayy, a Discord bot for birthday celebrations. Built with Next.js 12.3.7 and styled using Bulma CSS framework with custom SCSS theming.
+This is the marketing website for Birthdayy, a Discord bot for birthday celebrations. Built with **Astro** and styled using Bulma CSS framework with custom SCSS theming.
 
 ## Development Commands
 
 ```bash
-# Start development server (http://localhost:3000)
+# Start development server (http://localhost:4321)
 npm run dev
 
 # Build for production
 npm run build
 
-# Run production server
-npm start
-
-# Run linter
-npm run lint
+# Preview production build
+npm run preview
 ```
 
 ## Architecture
 
 ### Application Structure
 
-- **Layout System**: All pages are wrapped in a consistent layout (components/_layout.js) that includes:
-  - SEO component with meta tags
-  - Navbar component
-  - Main content area
+- **Layout System**: All pages use the `BaseLayout.astro` component that provides:
+  - SEO component with comprehensive meta tags and JSON-LD structured data
+  - Navbar component (React-based)
+  - Main content area (via `<slot />`)
   - Footer component
 
-- **Environment-based Settings**: The app uses environment-specific configuration via the settings/ directory:
-  - `settings/index.js` exports the appropriate settings object based on `NODE_ENV`
-  - `settings-development.js` and `settings-production.js` contain environment-specific metadata
-  - Settings are imported and used in components like SEO.js for meta tags
+- **SEO Configuration**: Centralized SEO metadata in `src/utils/seoConfig.ts`:
+  - Site-wide defaults (title, description, image, etc.)
+  - Social media metadata (Twitter, Open Graph)
+  - JSON-LD structured data for rich search results
+  - Theme colors and locale settings
+  - SEO component supports per-page overrides via props
 
-- **Routing & Redirects**: next.config.js contains extensive redirect rules for short URLs:
+- **Redirects**: Configured in `public/_redirects` for Netlify/similar hosts:
   - `/discord` → Discord server invite
   - `/invite` → Bot OAuth invite URL
   - `/docs`, `/status` → External subdomains
-  - `/topgg/vote`, `/discord-botlist/vote`, etc. → Various bot listing platforms
-  - All redirects are permanent (301)
+  - `/topgg/vote`, `/discord-botlist/vote`, etc. → Bot listing platforms
 
 ### Component Organization
 
-Components are organized by feature/domain:
+Components follow Astro best practices with clear separation by purpose:
 
-- **Generic**: Reusable UI primitives (Divider, Icon, IconText, Link)
-- **Homepage**: Landing page components (Title, CallToAction, Feature system with Tags)
-- **Navbar**: Navigation components (Navbar, NavbarItem, NavbarDropdown)
-- **Footer**: Footer component
-- **Vote**: Vote page components (VoteElement)
-- **SEO**: Meta tag management with social sharing tags (Twitter, OpenGraph)
+```
+src/components/
+├── layout/              # Structural & layout components
+│   ├── BaseLayout.astro # Main layout wrapper
+│   ├── SEO.astro        # SEO meta tags & structured data
+│   ├── Footer.astro     # Site footer
+│   ├── Navbar.jsx       # Main navigation (React)
+│   ├── NavbarDropdown.jsx
+│   └── NavbarItem.jsx
+│
+├── ui/                  # Reusable UI primitives
+│   ├── Divider.astro    # Visual divider
+│   ├── Icon.jsx         # Icon components (React)
+│   ├── IconText.astro   # Icon + text combo
+│   └── Link.astro       # Styled link component
+│
+├── home/                # Homepage-specific components
+│   ├── HomePage.astro   # Main homepage composition
+│   ├── Hero.astro       # Hero section with CTA
+│   ├── CallToAction.astro
+│   ├── FeatureList.astro
+│   ├── Feature.astro
+│   ├── FeatureTags.astro
+│   └── FeatureTag.jsx
+│
+└── vote/                # Vote page components
+    ├── VotePage.astro   # Vote page composition
+    └── VoteItem.astro   # Individual vote site card
+```
+
+**Component Guidelines:**
+- Astro components use inline `<style lang="scss">` tags for scoped styles
+- React components (`.jsx`) use CSS modules (e.g., `navbar.module.scss`)
+- All component names use PascalCase
+- No nested component folders (flat structure within categories)
+- Components are grouped by purpose (layout, ui, features)
 
 ### Styling Architecture
 
-The project uses a custom Bulma theme system:
+The project uses a hybrid styling approach:
 
-1. **Import Order** (styles/globals.scss):
+1. **Global Styles** (`src/styles/globals.scss`):
    - Bulma initial variables
-   - Custom theme overrides (styles/theme/theme.scss)
+   - Custom theme overrides (`styles/theme/theme.scss`)
    - Bulma framework
    - Creative Bulma extensions (bulma-divider)
 
-2. **Theme Structure** (styles/theme/):
+2. **Theme Structure** (`src/styles/theme/`):
    - `_colors.scss` - Color variables
-   - `_fonts.scss` - Font definitions
+   - `_fonts.scss` - Font definitions (Rubik, Montserrat)
    - `theme.scss` - Imports colors/fonts and defines custom classes
 
-3. **Custom Classes**:
+3. **Component Styles**:
+   - **Astro components**: Use inline `<style lang="scss">` tags (automatically scoped)
+   - **React components**: Use CSS modules (e.g., `navbar.module.scss`)
+   - Component styles are colocated with components for better maintainability
+
+4. **Custom Classes**:
    - `.is-logo` - Header font styling
    - `.is-heading-1/2/3` - Custom heading sizes
    - `.is-secondary` - Secondary color variant
    - `ruby::before` - Highlight effect background
 
-4. **Module SCSS**: Component-specific styles use CSS Modules (e.g., Index.module.scss, navbar.module.scss)
-
 ### Data Management
 
-- **db/voteSites.js**: Static data array of bot voting platforms with id, name, URL, and icon paths
-- No database or API integration - this is a static marketing site
+- **Data Files**:
+  - `src/data/voteSites.js` - Static array of bot voting platforms
+  - `src/utils/seoConfig.ts` - SEO metadata configuration
 
-### Image Configuration
+- **Static Site**: No database or API integration - all content is static
 
-next.config.js allows images from `bulma.io` domain via Next.js Image component.
+### SEO Implementation
+
+The SEO system provides comprehensive search engine optimization:
+
+**Features:**
+- Canonical URLs (auto-generated from current page)
+- Complete Open Graph tags (with image dimensions, alt text, locale)
+- Twitter Card metadata
+- JSON-LD structured data (Organization schema)
+- Per-page customization via props
+- Responsive social media images (1200x630)
+
+**SEO Component Props:**
+```typescript
+{
+  title?: string;          // Page title (defaults to site name)
+  description?: string;    // Page description
+  image?: string;          // Social share image URL
+  imageAlt?: string;       // Image alt text
+  type?: string;           // OG type (website, article, etc.)
+  noindex?: boolean;       // Prevent indexing
+  nofollow?: boolean;      // Prevent following links
+  canonical?: string;      // Custom canonical URL
+  article?: {              // For blog posts/articles
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+  };
+}
+```
+
+### Pages Structure
+
+```
+src/pages/
+├── index.astro       # Homepage (uses HomePage component)
+├── vote.astro        # Vote page (uses VotePage component)
+├── 404.astro         # Error page
+└── disclosure.astro  # Legal disclosure
+```
 
 ## Key Implementation Notes
 
-- All pages use the shared Layout wrapper via _app.js
-- SEO component handles both itemProp and name meta tag formats for broader compatibility
-- The min-height class in globals.scss is responsive based on viewport height
-- Navbar items use large font size (1.2rem) per theme
-- Selection highlighting uses the primary theme color
-- Mobile viewports hide scrollbars via custom CSS
+### Component Development
+- Astro components automatically scope styles in `<style>` tags
+- Use `client:load` directive for interactive React components
+- Prefer Astro components over React when interactivity isn't needed
+
+### Styling Best Practices
+- Component-specific styles → inline `<style>` tags
+- Global styles → `src/styles/globals.scss`
+- Theme customization → `src/styles/theme/`
+- React components → CSS modules
+
+### SEO Best Practices
+- All pages inherit from `seoConfig` defaults
+- Override defaults via BaseLayout props
+- Canonical URLs prevent duplicate content issues
+- JSON-LD structured data enhances search results
+
+### Performance Considerations
+- Images use lazy loading where appropriate
+- Bulma CSS is imported globally (needed across all pages)
+- React components only hydrate where needed (client:load)
+- Static site generation for optimal performance
+
+### Responsive Design
+- Bulma's responsive classes used throughout
+- Mobile-first approach
+- Breakpoints:
+  - Mobile: 0-900px
+  - Tablet/Desktop: 901-2000px
+  - Large Desktop: 2001px+
+
+## Migration Notes
+
+This project was migrated from Next.js to Astro for:
+- Better static site performance
+- Simpler architecture
+- Built-in component scoping
+- Improved developer experience
+
+Key differences from Next.js:
+- No `_app.js` → Use `BaseLayout.astro`
+- No API routes (wasn't using them)
+- Component imports explicit (no automatic imports)
+- Styling via `<style>` tags instead of CSS modules (for Astro components)
