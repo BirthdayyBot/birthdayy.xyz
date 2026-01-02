@@ -1,0 +1,35 @@
+---
+interface Props {
+  label: string;
+  category: 'birthday' | 'config';
+}
+
+const { label, category } = Astro.props;
+
+// Map category to Bulma color class
+const colorClass = category === 'birthday' ? 'is-primary' : 'is-light';
+---
+
+<span class={`tag ${colorClass} is-medium is-unselectable feature-tag`}>
+  {label}
+</span>
+
+<style lang="scss">
+  .feature-tag {
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &.is-primary:hover {
+      background-color: var(--bulma-primary-dark, #5fa99a);
+    }
+
+    &.is-light:hover {
+      background-color: var(--bulma-light-dark, #e8e8e8);
+    }
+  }
+</style>
