@@ -15,13 +15,13 @@ const features = featuresCollection.map(entry => entry.data);
 
     <FeatureTags />
 
-    {features.map((feature) => (
+    {features.map((feature, index) => (
       <Feature
         title={feature.title}
         description={feature.description}
         imageName={feature.imageName}
         points={feature.points}
-        imagePosition={feature.imagePosition}
+        imagePosition={index % 2 === 0 ? 'right' : 'left'}
       />
     ))}
   </div>
