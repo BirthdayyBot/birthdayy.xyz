@@ -1,5 +1,5 @@
 ---
-import VoteElement from "./VoteElement.astro";
+import VoteItem from "./VoteItem.astro";
 import style from "../../styles/vote.module.scss";
 import { VoteSites } from "../../data/voteSites.js";
 ---
@@ -12,7 +12,7 @@ import { VoteSites } from "../../data/voteSites.js";
 
   <div class="columns is-multiline mt-3">
     {VoteSites.map((element) => (
-      <VoteElement
+      <VoteItem
         name={element.name}
         url={element.url}
         icon={element.icon}

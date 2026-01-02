@@ -1,4 +1,4 @@
-import { NewTab as NewTabIcon } from "../Generic/Icon.jsx";
+import { NewTab as NewTabIcon } from "../ui/Icon.jsx";
 
 const NavbarItem = ({ label, url, newTab }) => {
   return (

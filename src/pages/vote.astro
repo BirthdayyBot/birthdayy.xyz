@@ -1,10 +1,10 @@
 ---
-import Layout from "../components/Layout.astro";
-import VoteComponent from "../components/Vote/Vote.astro";
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import VotePage from "../components/vote/VotePage.astro";
 ---
 
-<Layout title="Vote for us">
+<BaseLayout title="Vote for us">
   <div class="vote_page container">
-    <VoteComponent />
+    <VotePage />
   </div>
-</Layout>
+</BaseLayout>

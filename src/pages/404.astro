@@ -1,9 +1,9 @@
 ---
-import Layout from "../components/Layout.astro";
-import Link from "../components/Generic/Link.astro";
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Link from "../components/ui/Link.astro";
 ---
 
-<Layout title="Page Not Found">
+<BaseLayout title="Page Not Found">
   <div class="error container">
     <h1 class="is-title">It seems like this Page does not exist :(</h1>
     <div class="columns mt-5">
@@ -21,4 +21,4 @@ import Link from "../components/Generic/Link.astro";
       </div>
     </div>
   </div>
-</Layout>
+</BaseLayout>
