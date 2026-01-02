@@ -1,13 +1,12 @@
 ---
 import { NewTab } from "../ui/Icon.jsx";
-import style from "../../styles/vote.module.scss";
 
 const { name, url, icon } = Astro.props;
 ---
 
 <div class="vote_element column is-6">
   <a href={url} target="_blank" style="text-decoration: inherit; color: inherit;">
-    <div class={style.hoverEffect}>
+    <div class="hoverEffect">
       <article class="notification is-primary">
         <div class="columns is-vcentered is-mobile">
           <!-- HIDDEN MOBILE -->
@@ -18,7 +17,7 @@ const { name, url, icon } = Astro.props;
                 width="80"
                 height="80"
                 alt="Placeholder image"
-                class={style.site_logo}
+                class="site_logo"
               />
             </figure>
           </div>
@@ -30,7 +29,7 @@ const { name, url, icon } = Astro.props;
                 width="120"
                 height="120"
                 alt="Placeholder image"
-                class={style.site_logo}
+                class="site_logo"
               />
             </figure>
           </div>
@@ -50,3 +49,27 @@ const { name, url, icon } = Astro.props;
     </div>
   </a>
 </div>
+
+<style lang="scss">
+  @media (min-height: 0px) and (max-height: 1100px) {
+    .vote_element {
+      min-height: 32rem;
+    }
+  }
+
+  @media (min-height: 1101px) {
+    .vote_element {
+      min-height: 35rem;
+    }
+  }
+
+  .hoverEffect {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px #78c2ad, 0 0 20px #fdfdfd;
+      cursor: pointer;
+    }
+  }
+</style>

@@ -1,5 +1,4 @@
 ---
-import style from "../../styles/Index.module.scss";
 import Divider from "../ui/Divider.astro";
 import { ArrowRight } from "../ui/Icon.jsx";
 import IconText from "../ui/IconText.astro";
@@ -35,7 +34,7 @@ const { isNormal, imageName, title, description, points } = Astro.props;
           height="1680"
           loading="lazy"
           alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
-          class={style.showcase_image}
+          class="showcase_image"
         />
       </div>
     </div>
@@ -51,7 +50,7 @@ const { isNormal, imageName, title, description, points } = Astro.props;
           height="1680"
           loading="lazy"
           alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
-          class={style.showcase_image}
+          class="showcase_image"
         />
       </div>
     </div>
@@ -82,9 +81,15 @@ const { isNormal, imageName, title, description, points } = Astro.props;
           height="1680"
           loading="lazy"
           alt={`Image of ${imageName.replace(/-/g, " ")} Feature`}
-          class={style.showcase_image}
+          class="showcase_image"
         />
       </div>
     </div>
   </div>
 )}
+
+<style lang="scss">
+  .showcase_image {
+    border-radius: 1rem;
+  }
+</style>
