@@ -21,25 +21,58 @@ export function animateOnScroll() {
 
   // Individual feature animations
   inView('.feature', ({ target }) => {
-    const text = target.querySelector('.column:has(.is-title)');
-    const image = target.querySelector('.column:has(img)');
+    const text = target.querySelector('.feature-text');
+    const image = target.querySelector('.feature-image-column');
+    const points = target.querySelectorAll('.feature-point');
 
+    // Determine animation direction based on order
+    const isTextFirst = text?.classList.contains('order-1');
+    const textDirection = isTextFirst ? -40 : 40;
+    const imageDirection = isTextFirst ? 40 : -40;
+
+    // Animate text column
     if (text) {
       animate(
         text,
-        { opacity: [0, 1], transform: ['translateX(-30px)', 'translateX(0)'] },
+        {
+          opacity: [0, 1],
+          transform: [`translateX(${textDirection}px)`, 'translateX(0)'],
+        },
         { duration: 0.8, easing: [0.22, 1, 0.36, 1] }
       );
     }
 
+    // Animate image column with rotation effect
     if (image) {
       animate(
         image,
-        { opacity: [0, 1], transform: ['translateX(30px)', 'translateX(0)'] },
-        { duration: 0.8, delay: 0.1, easing: [0.22, 1, 0.36, 1] }
+        {
+          opacity: [0, 1],
+          transform: [
+            `translateX(${imageDirection}px) rotateY(${imageDirection > 0 ? '15deg' : '-15deg'})`,
+            'translateX(0) rotateY(0deg)'
+          ],
+        },
+        { duration: 1, delay: 0.2, easing: [0.22, 1, 0.36, 1] }
       );
     }
-  }, { amount: 0.3 });
+
+    // Staggered animation for feature points
+    if (points.length > 0) {
+      animate(
+        points,
+        {
+          opacity: [0, 1],
+          transform: ['translateY(20px)', 'translateY(0)'],
+        },
+        {
+          duration: 0.5,
+          delay: stagger(0.1, { start: 0.4 }),
+          easing: 'ease-out'
+        }
+      );
+    }
+  }, { amount: 0.2 });
 
   // Vote items animation
   inView('.vote_element', ({ target }) => {
@@ -55,14 +88,28 @@ export function animateOnScroll() {
  * Add hover animations to elements
  */
 export function addHoverAnimations() {
-  // Feature images
+  // Feature images with 3D tilt effect
   const featureImages = document.querySelectorAll('.showcase_image');
   featureImages.forEach((img) => {
     img.addEventListener('mouseenter', () => {
-      animate(img as HTMLElement, { scale: 1.05 }, { duration: 0.3 });
+      animate(
+        img as HTMLElement,
+        {
+          scale: 1.05,
+          transform: 'perspective(1000px) rotateY(5deg) rotateX(-2deg)',
+        },
+        { duration: 0.4, easing: [0.22, 1, 0.36, 1] }
+      );
     });
     img.addEventListener('mouseleave', () => {
-      animate(img as HTMLElement, { scale: 1 }, { duration: 0.3 });
+      animate(
+        img as HTMLElement,
+        {
+          scale: 1,
+          transform: 'perspective(1000px) rotateY(0deg) rotateX(0deg)',
+        },
+        { duration: 0.4, easing: [0.22, 1, 0.36, 1] }
+      );
     });
   });
 

@@ -20,24 +20,26 @@ const imageOrder = isImageLeft ? 'order-1 order-2-mobile' : 'order-2 order-1-mob
 
 <div class="feature columns is-centered is-multiline">
   <!-- Text Column -->
-  <div class={`column is-2 ${textOrder}`}>
-    <h3 class="block is-title is-size-3 mt-5 has-text-centered-touch">
+  <div class={`column is-2 ${textOrder} feature-text`}>
+    <h3 class="block is-title is-size-3 mt-5 has-text-centered-touch feature-title">
       {title}
     </h3>
-    <p class="block is-sub-title">{description}</p>
+    <p class="block is-sub-title feature-description">{description}</p>
     {points && points.length > 0 && (
       <div class="block is-sub-title feature-points">
         {points.map((point) => (
-          <IconText text={point}>
-            <ArrowRight slot="icon" client:load />
-          </IconText>
+          <div class="feature-point">
+            <IconText text={point}>
+              <ArrowRight slot="icon" client:load />
+            </IconText>
+          </div>
         ))}
       </div>
     )}
   </div>
 
   <!-- Image Column -->
-  <div class={`column is-3 ${imageOrder}`}>
+  <div class={`column is-3 ${imageOrder} feature-image-column`}>
     <div class="feature-image-wrapper">
       <img
         src={`/media/images/features/${imageName}.webp`}
@@ -53,24 +55,45 @@ const imageOrder = isImageLeft ? 'order-1 order-2-mobile' : 'order-2 order-1-mob
 
 <style lang="scss">
   .feature {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .feature-text,
+  .feature-image-column {
+    opacity: 0;
   }
 
   .feature-points {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .feature-point {
+    opacity: 0;
+    margin-bottom: 0.5rem;
   }
 
   .feature-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1000px;
   }
 
   .showcase_image {
     border-radius: 1rem;
     max-width: 100%;
     height: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
     will-change: transform;
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
   }
 
   // Mobile-specific ordering
@@ -81,6 +104,10 @@ const imageOrder = isImageLeft ? 'order-1 order-2-mobile' : 'order-2 order-1-mob
 
     .order-2-mobile {
       order: 2;
+    }
+
+    .feature {
+      margin-bottom: 3rem;
     }
   }
 </style>
