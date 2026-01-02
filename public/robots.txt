@@ -1,0 +1,8 @@
+# robots.txt for birthdayy.xyz
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location (update this URL when you add a sitemap)
+# Sitemap: https://birthdayy.xyz/sitemap.xml

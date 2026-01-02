@@ -1,0 +1,25 @@
+{
+  "name": "Birthdayy - Discord Birthday Bot",
+  "short_name": "Birthdayy",
+  "description": "The best Discord bot for birthday celebrations. Never miss a birthday again!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#262828",
+  "theme_color": "#78c2ad",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/media/images/birthdayy-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "utilities"],
+  "lang": "en-US"
+}

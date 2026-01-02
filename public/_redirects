@@ -1,0 +1,18 @@
+# Redirect rules for Birthdayy marketing site
+# These are permanent (301) redirects
+
+/discord                  https://discord.gg/Bs9bSVe2Hf                                                                                                301
+/docs                     https://docs.birthdayy.xyz/                                                                                                   301
+/status                   https://status.birthdayy.xyz/                                                                                                 301
+/invite                   https://discord.com/oauth2/authorize?client_id=916434908728164372&permissions=525529836753&scope=applications.commands%20bot 301
+/patreon                  https://www.patreon.com/birthdayy                                                                                             301
+/premium                  https://www.patreon.com/birthdayy                                                                                             301
+/topgg                    https://top.gg/bot/916434908728164372                                                                                         301
+/topgg/vote               https://top.gg/bot/916434908728164372/vote                                                                                    301
+/botgg                    https://bot.gg/birthdayy                                                                                                      301
+/discord-botlist          https://discord-botlist.eu/bots/916434908728164372                                                                            301
+/discord-botlist/vote     https://discord-botlist.eu/vote/916434908728164372                                                                            301
+/discordlist              https://discordlist.gg/bot/916434908728164372                                                                                 301
+/discordlist/vote         https://discordlist.gg/bot/916434908728164372/vote                                                                            301
+/tos                      https://www.websitepolicies.com/policies/view/kb0ati9q                                                                        301
+/privacy                  https://www.websitepolicies.com/policies/view/g9a126jo                                                                        301
