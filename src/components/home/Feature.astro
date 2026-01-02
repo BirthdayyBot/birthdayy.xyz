@@ -63,11 +63,21 @@ const imageOrder = isImageLeft ? 'order-1 order-2-mobile' : 'order-2 order-1-mob
   }
 
   .feature-text {
-    animation: fadeInLeft 0.8s ease-out both;
+    &.order-1 {
+      animation: fadeInLeft 0.8s ease-out both;
+    }
+    &.order-2 {
+      animation: fadeInRight 0.8s ease-out both;
+    }
   }
 
   .feature-image-column {
-    animation: fadeInRight 1s ease-out 0.2s both;
+    &.order-1 {
+      animation: fadeInLeft 1s ease-out 0.2s both;
+    }
+    &.order-2 {
+      animation: fadeInRight 1s ease-out 0.2s both;
+    }
   }
 
   .feature-points {
