@@ -70,11 +70,7 @@ const imageOrder = isImageLeft ? 'order-1 order-2-mobile' : 'order-2 order-1-mob
     border-radius: 1rem;
     max-width: 100%;
     height: auto;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.02);
-    }
+    will-change: transform;
   }
 
   // Mobile-specific ordering

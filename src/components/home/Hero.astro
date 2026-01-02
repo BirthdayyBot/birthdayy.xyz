@@ -41,17 +41,17 @@ const { config = heroConfig } = Astro.props;
           {config.tagline}
         </p>
       </div>
-    </div>
 
-    <!-- Call to Action -->
-    <CallToAction
-      primaryText={config.cta.primary.text}
-      primaryUrl={config.cta.primary.url}
-      primaryExternal={config.cta.primary.external}
-      secondaryText={config.cta.secondary?.text}
-      secondaryUrl={config.cta.secondary?.url}
-      secondaryExternal={config.cta.secondary?.external}
-    />
+      <!-- Call to Action -->
+      <CallToAction
+        primaryText={config.cta.primary.text}
+        primaryUrl={config.cta.primary.url}
+        primaryExternal={config.cta.primary.external}
+        secondaryText={config.cta.secondary?.text}
+        secondaryUrl={config.cta.secondary?.url}
+        secondaryExternal={config.cta.secondary?.external}
+      />
+    </div>
   </div>
 </header>
 
@@ -89,33 +89,28 @@ const { config = heroConfig } = Astro.props;
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
+    animation: fadeInUp 0.8s ease-out both;
 
     .highlight {
       display: inline-block;
       position: relative;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
     }
   }
 
   .hero-logo {
     flex-shrink: 0;
-    animation: fadeIn 1s ease-out 0.4s both;
+    animation: fadeInScale 1s ease-out 0.3s both;
 
     img {
       max-width: 100%;
       height: auto;
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-      transition: transform 0.3s ease-in-out;
-
-      &:hover {
-        transform: scale(1.05) rotate(2deg);
-      }
     }
   }
 
   .hero-tagline {
     max-width: 700px;
-    animation: fadeInUp 0.8s ease-out 0.4s both;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 
     @media screen and (max-width: 768px) {
       text-align: center;
@@ -123,30 +118,31 @@ const { config = heroConfig } = Astro.props;
     }
   }
 
-  .tagline-text {
-    color: var(--bulma-text, #4a4a4a);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  // Animations
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .tagline-text {
+    color: var(--bulma-text, #4a4a4a);
+    line-height: 1.6;
+    margin: 0;
   }
 </style>
