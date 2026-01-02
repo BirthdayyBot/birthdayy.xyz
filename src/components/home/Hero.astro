@@ -1,48 +1,152 @@
 ---
 import CallToAction from "./CallToAction.astro";
+import { heroConfig } from "../../data/hero";
+
+interface Props {
+  config?: typeof heroConfig;
+}
+
+const { config = heroConfig } = Astro.props;
 ---
 
-<div class="title_component container is-fluid">
-  <div class="columns">
-    <div class="column is-3"></div>
-    <div class="column is-10">
-      <div class="columns">
-        <div class="column is-5">
-          <h1 class="title is-size-1-touch">
-            THE BEST
+<header class="hero-section">
+  <div class="container is-fluid">
+    <div class="hero-content">
+      <!-- Title and Logo Row -->
+      <div class="hero-main">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            {config.title.prefix}
             <br />
-            <span class="is-color-primary">BIRTHDAYY</span>
+            <span class="is-color-primary highlight">{config.title.highlight}</span>
             <br />
-            DISCORD BOT
+            {config.title.suffix}
           </h1>
         </div>
-        <div class="column is-3 is-hidden-touch is-unselectable">
+
+        <div class="hero-logo is-hidden-touch">
           <img
-            src="/media/images/birthdayy-logo.png"
-            alt="Birthdayy"
-            width="280"
-            height="280"
+            src={config.logo.src}
+            alt={config.logo.alt}
+            width={config.logo.width}
+            height={config.logo.height}
+            loading="eager"
           />
         </div>
       </div>
-      <div class="columns">
-        <div class="column is-8">
-          <h4 class="is-size-4 is-sub-header">
-            Your easy-to-use, aesthetic and customizable Birthday Bot for
-            any Discord Server
-          </h4>
-        </div>
+
+      <!-- Tagline -->
+      <div class="hero-tagline">
+        <p class="tagline-text is-size-4">
+          {config.tagline}
+        </p>
       </div>
     </div>
+
+    <!-- Call to Action -->
+    <CallToAction
+      primaryText={config.cta.primary.text}
+      primaryUrl={config.cta.primary.url}
+      primaryExternal={config.cta.primary.external}
+      secondaryText={config.cta.secondary?.text}
+      secondaryUrl={config.cta.secondary?.url}
+      secondaryExternal={config.cta.secondary?.external}
+    />
   </div>
-  <CallToAction />
-</div>
+</header>
 
 <style lang="scss">
-  .title_component {
-    h1 {
-      font-size: 5rem;
-      font-family: "Rubik", sans-serif;
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .hero-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+
+    .highlight {
+      display: inline-block;
+      position: relative;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+  }
+
+  .hero-logo {
+    flex-shrink: 0;
+    animation: fadeIn 1s ease-out 0.4s both;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05) rotate(2deg);
+      }
+    }
+  }
+
+  .hero-tagline {
+    max-width: 700px;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  .tagline-text {
+    color: var(--bulma-text, #4a4a4a);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  // Animations
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>

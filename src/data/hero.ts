@@ -1,0 +1,58 @@
+/**
+ * Hero section configuration
+ * Contains the main headline, tagline, and branding for the homepage
+ */
+
+export interface HeroConfig {
+  title: {
+    prefix: string;
+    highlight: string;
+    suffix: string;
+  };
+  tagline: string;
+  logo: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  cta: {
+    primary: {
+      text: string;
+      url: string;
+      external: boolean;
+    };
+    secondary?: {
+      text: string;
+      url: string;
+      external: boolean;
+    };
+  };
+}
+
+export const heroConfig: HeroConfig = {
+  title: {
+    prefix: 'THE BEST',
+    highlight: 'BIRTHDAYY',
+    suffix: 'DISCORD BOT',
+  },
+  tagline: 'Your easy-to-use, aesthetic and customizable Birthday Bot for any Discord Server',
+  logo: {
+    src: '/media/images/birthdayy-logo.png',
+    alt: 'Birthdayy Bot Logo',
+    width: 280,
+    height: 280,
+  },
+  cta: {
+    primary: {
+      text: 'Invite Bot',
+      url: '/invite',
+      external: true,
+    },
+    secondary: {
+      text: 'Join Discord',
+      url: '/discord',
+      external: true,
+    },
+  },
+};
