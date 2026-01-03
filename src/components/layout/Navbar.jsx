@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavbarItem from "./NavbarItem.jsx";
 import NavbarDropdown from "./NavbarDropdown.jsx";
-import style from "../../styles/navbar.module.scss";
+import style from "./navbar.module.scss";
 
 const Navbar = () => {
   const [isActive, setisActive] = useState(false);

@@ -69,7 +69,7 @@ src/components/
 │   ├── FeatureList.astro
 │   ├── Feature.astro
 │   ├── FeatureTags.astro
-│   └── FeatureTag.jsx
+│   └── FeatureTag.astro
 │
 └── vote/                # Vote page components
     ├── VotePage.astro   # Vote page composition
@@ -100,7 +100,7 @@ The project uses a hybrid styling approach:
 
 3. **Component Styles**:
    - **Astro components**: Use inline `<style lang="scss">` tags (automatically scoped)
-   - **React components**: Use CSS modules (e.g., `navbar.module.scss`)
+   - **React components**: Use CSS modules (e.g., `navbar.module.scss`) colocated with the component
    - Component styles are colocated with components for better maintainability
 
 4. **Custom Classes**:
